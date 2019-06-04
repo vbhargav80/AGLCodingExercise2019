@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var grouping in Model.Groupings)
+        {
+            <h4>@grouping.OwnerGender</h4>
+            <ul>
+                @foreach (var pet in grouping.Pets)
+                {
+                    <li>@pet.Name</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
